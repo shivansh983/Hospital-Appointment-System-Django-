@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://wallpapercave.com/wp/wp2979775.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #333; /* Text color */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #007bff; /* Blue header background */
+            padding: 20px;
+            color: #fff; /* Header text color */
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            max-width: 100px;
+            margin-right: auto; /* Pushes the logo to the left */
+        }
+
+        /* Back button styles */
+        .back-button {
+            background-color: #007bff; /* Blue button color */
+            color: #fff; /* Button text color */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        /* Main content styles */
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff; /* White background for content */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h2 {
+            color: #007bff; /* Blue heading color */
+        }
+
+        .content p {
+            line-height: 1.6; /* Improved readability */
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #007bff; /* Blue footer background */
+            color: #fff; /* Footer text color */
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://th.bing.com/th/id/OIP.aQWbIg3RkuFFbJmnS5oP6wHaHa?w=211&h=211&c=7&r=0&o=5&pid=1.7" alt="Hospital Booking Logo" class="logo">
+        <h1>About Us</h1>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </header>
+
+    <div class="content">
+        <div class="content">
+            <h2>Welcome to Hospital Booking</h2>
+            <p>At Hospital Booking, our mission is to make healthcare accessible and convenient for everyone. We understand that booking medical appointments can be a daunting task, which is why we've created a platform that simplifies the process.</p>
+            <p>Whether you need to schedule a routine check-up, book a specialist consultation, or arrange for a diagnostic test, Hospital Booking is here to help. Our user-friendly interface allows you to search for healthcare providers, view available appointments, and book slots that fit your schedule.</p>
+            <p>Our team is dedicated to providing you with a seamless booking experience. We partner with trusted hospitals, clinics, and healthcare professionals to ensure that you receive high-quality care when you need it most.</p>
+            <p>Thank you for choosing Hospital Booking for your healthcare needs. We look forward to serving you and making your journey to better health a smooth and stress-free one.</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Hospital-Booking
+    </footer>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

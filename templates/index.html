@@ -1,0 +1,264 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Finder</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <style>
+        /* Additional CSS for hospital-like appearance */
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ade5f5;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .logo {
+            height: 90px; /* Increase logo size */
+            margin-right: 60px;
+           
+        }
+
+        nav {
+            text-align: right;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            display: inline-block;
+            margin-left: 20px;
+            border: 1px solid black; /* Add border around buttons */
+            padding: 10px 20px;
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+        }
+
+        .nav-links li a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-links li:hover {
+            background-color: #000; /* Darken background on hover */
+        }
+
+        .nav-links li a:hover {
+            color: #ffd700; /* Change text color on hover */
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .book-appointment-button {
+            padding: 12px 24px;
+            background-color: #000000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .book-appointment-button:hover {
+            background-color: #59b7ac; /* Darken button on hover */
+        }
+   
+        .cta {
+            position: relative; /* Set the position to relative */
+            background-image: url("https://wallpapercave.com/wp/wp2979775.jpg");
+            background-size: cover; /* Adjusts the background image to cover the entire container */
+            background-position: center; /* Centers the background image */
+            color: #ffffff; /* Text color */
+            height: 600px; /* Adjust the height as needed */
+            display: flex;
+            align-items: center; /* Vertically center the content */
+        }
+
+        .overlay {
+            position: absolute; /* Position the overlay */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+        }
+
+        .cta-content {
+            z-index: 1; /* Ensure the content appears above the overlay */
+            width: 50%;
+            margin: 0 auto; /* Center the content horizontally */
+            text-align: center;
+        }
+
+
+
+
+        .cta-text {
+            color: #ffffff; /* Change text color to black */
+            z-index: 1; /* Ensure the text appears above the overlay */
+            width: 50%;
+            margin: 0 auto; /* Center the content horizontally */
+            text-align: center;
+        }
+
+
+        .cta-image img {
+            max-width: 100%; /* Make sure the image doesn't exceed its container */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+
+        .second-page {
+            background-color: #00796b;
+            padding: 60px 20px;
+            text-align: center;
+            color: #ffffff; /* Change text color to white */
+        }
+
+        .second-page h2 {
+            margin-bottom: 20px;
+        }
+
+        .second-page p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .cta-buttons button {
+            margin: 0 10px;
+            padding: 12px 24px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cta-buttons button:hover {
+            background-color: #555; /* Darken button on hover */
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+        .search-form {
+            margin-top: 20px;
+        }
+
+        .search-form input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-form button {
+            padding: 10px 20px;
+            background-color: #009688;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-form button:hover {
+            background-color: #00796b;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="https://th.bing.com/th/id/OIP.aQWbIg3RkuFFbJmnS5oP6wHaHa?w=211&h=211&c=7&r=0&o=5&pid=1.7" alt="Logo" class="logo">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{%url 'index'%}" class="nav-link">Home</a></li>
+                    <li><a href="{%url 'services'%}" class="nav-link">Services</a></li>
+                    <li><a href="{%url 'doctors'%}" class="nav-link">Find Doctors</a></li>
+                    <li><a href="{%url 'about'%}" class="nav-link">About-Us</a></li>
+                    <li><a href="#" class="nav-link">Register</a></li>
+                    <li><a href="#" class="nav-link">Log In</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container">
+            <form class="search-form" action="#" method="GET">
+                <input type="text" name="search" placeholder="Search for doctors">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+    </header>
+    
+    <main>
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <div class="cta-text">
+                        <h2 class="cta-title">Find the right doctor for you</h2>
+                        <p class="cta-description">Book appointments with top-rated doctors in your area</p>
+                        <a href="{% url 'booking' %}" class="book-appointment-button">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <section class="second-page">
+            <div class="container">
+                <h2>Streamline your appointment booking process with ease</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac libero vel turpis hendrerit sagittis.
+                    Nullam vehicula hendrerit elit, sit amet vestibulum justo vulputate eu.
+                </p>
+                <div class="cta-buttons">
+                    <button>Get Started</button>
+                    <button>Learn More</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Doctor Finder. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

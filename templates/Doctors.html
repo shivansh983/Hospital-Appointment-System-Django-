@@ -1,0 +1,118 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors List</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5; /* Light background color */
+            color: #333; /* Text color */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #007bff; /* Blue header background */
+            padding: 20px 0;
+            color: #fff; /* Header text color */
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Navigation styles */
+        nav {
+            background-color: #fff; /* White navigation background */
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #007bff; /* Blue link color */
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-right: 20px; /* Add margin between buttons */
+        }
+
+        nav a:last-child {
+            margin-right: 0; /* Remove margin from the last button */
+        }
+
+        nav a:hover {
+            background-color: #f0f0f0; /* Light gray background on hover */
+        }
+
+        /* Doctor list container styles */
+        .doctor-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Individual doctor card styles */
+        .doctor-card {
+            background-color: #fff; /* White card background */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+            width: 300px;
+        }
+
+        .doctor-card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hover effect */
+        }
+
+        .doctor-card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #f0f0f0; /* Light gray border */
+        }
+
+        .doctor-info {
+            padding: 20px;
+        }
+
+        .doctor-info h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .doctor-info p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>List of Doctors</h1>
+    </header>
+    <nav>
+        <a href="{% url 'booking' %}">Make Appointment</a>
+        <a href="{% url 'index' %}">Back to Home</a>
+    </nav>
+    <div class="doctor-list">
+        {% for doctor in doctors %}
+        <div class="doctor-card">
+            <img src="{% static doctor.image.url %}" alt="{{ doctor.name }}">
+            <div class="doctor-info">
+                <h2>{{ doctor.name }}</h2>
+                <p><strong>Specialization:</strong> {{ doctor.specialization }}</p>
+                <p><strong>Description:</strong> {{ doctor.description }}</p>
+                <p><strong>Experience:</strong> {{ doctor.experience }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

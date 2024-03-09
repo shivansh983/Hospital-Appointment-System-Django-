@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5; /* Light background color */
+            color: #333; /* Text color */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #007bff; /* Blue header background */
+            color: #fff; /* Header text color */
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .language-select select {
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .search input[type="text"] {
+            padding: 5px;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .search button {
+            padding: 5px 10px;
+            border-radius: 0 5px 5px 0;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .emergency-number a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Main content styles */
+        main {
+            padding: 20px;
+        }
+
+        .services, .specialties {
+            margin-bottom: 30px;
+        }
+
+        .services h2, .specialties h2 {
+            color: #007bff; /* Blue heading color */
+        }
+
+        .services ul, .specialty-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .services ul li, .specialty-list li {
+            margin-bottom: 10px;
+        }
+
+        .specialty-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .specialty-card h3 {
+            color: #007bff; /* Blue heading color */
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #007bff; /* Blue footer background */
+            color: #fff; /* Footer text color */
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo img {
+            max-width: 100px;
+        }
+
+        .social-media a {
+            margin-right: 10px;
+        }
+
+        .social-media img {
+            max-width: 30px;
+        }
+
+        .contact-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .contact-links a:last-child {
+            margin-right: 0;
+        }
+
+        .copyright p {
+            margin: 0;
+        }
+
+        .back-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Find a Doctor</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="language-select">
+            <select>
+                <option value="en">EN</option>
+            </select>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search">
+            <button type="submit">Search</button>
+        </div>
+        <div class="emergency-number">
+            <a href="#">Emergency number</a>
+        </div>
+        <button onclick="goBack()" class="back-button">Back</button>
+    </header>
+
+    <main>
+        <section class="services">
+            <h2>--Select--</h2>
+            <ul>
+                <li><a href="#" class="btn">All Specialties</a></li>
+                <li><a href="#" class="btn">Top Specialties</a></li>
+                <!-- Add more list items as needed -->
+            </ul>
+        </section>
+
+        <section class="specialties">
+            <h2>Specialties</h2>
+            <input type="text" placeholder="Search Speciality or condition">
+            <div class="specialty-list">
+                <div class="specialty-card">
+                    <h3>Adult CTVS (Cardiothoracic and Vascular Surgery)</h3>
+                    <p>33 Doctors available at 20 locations</p>
+                </div>
+                <div class="specialty-card">
+                    <h3>Anaesthesia</h3>
+                    <p>43 Doctors available at 11 locations</p>
+                </div>
+                <!-- Add more specialty cards as needed -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="https://th.bing.com/th/id/OIP.aQWbIg3RkuFFbJmnS5oP6wHaHa?w=211&h=211&c=7&r=0&o=5&pid=1.7" alt="Footer Logo">
+        </div>
+
+        <div class="social-media">
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="youtube.png" alt="Youtube"></a>
+        </div>
+        <div class="contact-links">
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Online payment & refund policy</a>
+            <a href="#">Tele-consult</a>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2022 Hospital-Booking. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
